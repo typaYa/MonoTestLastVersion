@@ -147,7 +147,7 @@ class OwnerController extends Controller
 
             ]
         );
-
+        Auto::query()->where('id_owner','=',$id)->delete();
         Owner::query()->where('id','=',$id)->update($owners);
         return redirect()->route('home');
     }
